@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
-import AirConnection from './sections/AirConnection';
+import AirConnection from './main/AirConnection';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Header />
       <Hero />
       <AirConnection />
+      <Footer />
     </>
   );
 }

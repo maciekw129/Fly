@@ -1,6 +1,7 @@
 import {
      SearchConnection,
-     TrackList
+     TrackList,
+     AirConnectionContainer,
 } from './styles';
 import Dropdown from '../../components/Dropdown';
 import { airports } from '../../data/airports';
@@ -20,7 +21,7 @@ const AirConnection = () => {
     }
 
     return(
-        <section>
+        <AirConnectionContainer>
             <h3>I want to fly...</h3>
             <SearchConnection>
                 <p>from</p>
@@ -29,13 +30,12 @@ const AirConnection = () => {
                 <Dropdown data={airports} setValue={setEnding} value={ending} />
                 <Button onClick={handleClick}>fly!</Button>
             </SearchConnection>
-            <p>so your track is:</p>
             <TrackList>
                 {track.map((airport, index) => {
                     return airport === track[track.length - 1] ? <p key={index}>{airport}</p> : <div key={index}><p>{airport}</p><PlaneTakeOff width="1rem" height="1rem"/></div>
                 })}
             </TrackList>
-        </section>
+        </AirConnectionContainer>
     )
 };
 

@@ -1,5 +1,18 @@
 import styled from 'styled-components/macro';
 
+export const AirConnectionContainer = styled.main`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5rem;
+        padding: 2rem 0;
+
+        @media only screen and (max-width: 550px) {
+            margin-top: 0;
+        }
+`;
+
 export const SearchConnection = styled.div`
         display: flex;
         align-items: center;

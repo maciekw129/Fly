@@ -6,11 +6,6 @@ const theme = {
         primaryColor: '#2750E6',
         secondaryColor: '#6E89EA',
     },
-    fontSizes: {
-        small: '1rem',
-        medium: '2rem',
-        large: '3rem',
-    } 
 };
 
 interface Props  {

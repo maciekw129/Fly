@@ -42,6 +42,11 @@ export const Search = styled.input`
     border: 1px solid ${ props => props.theme.colors.secondaryColor };
     border-radius: 5px 0px 0px 5px;
     padding-left: 0.75rem;
+
+    &[type="text"]:disabled {
+        color: black;
+        text-align: center;
+    }
 `;
 
 export const IconWrapper = styled.div<{isVisible: boolean}>`

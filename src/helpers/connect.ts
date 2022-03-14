@@ -3,6 +3,8 @@ import { connections } from '../data/airports';
 const connect = (starting: string, ending: string) => {
     if(!starting || !ending) {
         return ['Enter airports first, then fly.'];
+    } else if(starting === ending) {
+        return ['You are already here...'];
     }
     let airports = connections.filter(connection => connection.includes(starting)).map(connection => connection[0] === starting ? [connection[1]] : [connection[0]]);
     let connectionsLeft = connections.filter(connection => !connection.includes(starting));
