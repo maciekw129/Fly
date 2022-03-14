@@ -11,6 +11,11 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Fredoka', sans-serif;
     }
 
+    p {
+        padding: 0.5rem;
+        
+        text-align: center;
+    }
 `;
 
 export default GlobalStyles;

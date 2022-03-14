@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 const theme = {
     colors: {
         primaryColor: '#2750E6',
-        secondaryColor: '#E6633E',
+        secondaryColor: '#6E89EA',
     },
     fontSizes: {
         small: '1rem',
