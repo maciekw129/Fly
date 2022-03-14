@@ -6,8 +6,9 @@ const connect = (starting: string, ending: string) => {
     } else if(starting === ending) {
         return ['You are already here...'];
     }
-    let airports = connections.filter(connection => connection.includes(starting)).map(connection => connection[0] === starting ? [connection[1]] : [connection[0]]);
-    let connectionsLeft = connections.filter(connection => !connection.includes(starting));
+    let airports = connections.filter(connection => connection.includes(starting)).map(connection => connection[0] === starting ? [connection[0]] : [connection[1]]);
+    console.log(airports);
+    let connectionsLeft = connections;
     do {
         let newAirports = [];
         for(let i = 0; i<=airports.length-1; i++) {
@@ -18,7 +19,7 @@ const connect = (starting: string, ending: string) => {
             for(let y=0; y<=toAdd.length -1; y++) {
                 let arrayToAdd = [...airportsConnection, toAdd[y]];
                 if(arrayToAdd[arrayToAdd.length-1] === ending) {
-                    return [starting, ...arrayToAdd];
+                    return arrayToAdd;
                 }
                 newAirports.push(arrayToAdd);
             }
