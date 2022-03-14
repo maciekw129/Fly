@@ -7,7 +7,6 @@ const connect = (starting: string, ending: string) => {
         return ['You are already here...'];
     }
     let airports = connections.filter(connection => connection.includes(starting)).map(connection => connection[0] === starting ? [connection[0]] : [connection[1]]);
-    console.log(airports);
     let connectionsLeft = connections;
     do {
         let newAirports = [];
@@ -26,7 +25,6 @@ const connect = (starting: string, ending: string) => {
         }
         airports = newAirports;
     } while(!!connectionsLeft.length);
-
     return ['Sorry, there is no connection between this airports.'];
 };
 
