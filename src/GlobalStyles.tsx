@@ -11,6 +11,14 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Fredoka', sans-serif;
     }
 
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 0;
+    }
+
     p {
         padding: 0.5rem;
         

@@ -21,8 +21,8 @@ const connect = (starting: string, ending: string) => {
         }
         airports = newAirports;
     } while(!!connectionsLeft.length);
-    
-    return false;
+
+    return null;
 };
 
 export default connect;
