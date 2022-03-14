@@ -1,9 +1,11 @@
 import { connections } from '../data/airports';
 
 const connect = (starting: string, ending: string) => {
+    if(!starting || !ending) {
+        return ['Enter airports first, then fly.'];
+    }
     let airports = connections.filter(connection => connection.includes(starting)).map(connection => connection[0] === starting ? [connection[1]] : [connection[0]]);
     let connectionsLeft = connections.filter(connection => !connection.includes(starting));
-
     do {
         let newAirports = [];
         for(let i = 0; i<=airports.length-1; i++) {
@@ -22,7 +24,7 @@ const connect = (starting: string, ending: string) => {
         airports = newAirports;
     } while(!!connectionsLeft.length);
 
-    return null;
+    return ['Sorry, there is no connection between this airports.'];
 };
 
 export default connect;

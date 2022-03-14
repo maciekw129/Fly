@@ -7,18 +7,17 @@ import { airports } from '../../data/airports';
 import { useState } from 'react';
 import Button from '../../components/Button';
 import connect from '../../helpers/connect';
+import { PlaneTakeOff } from '@styled-icons/boxicons-solid/PlaneTakeOff';
 
 const AirConnection = () => {
 
     const [starting, setStarting] = useState('');
     const [ending, setEnding] = useState('');
-    const [track, setTrack] = useState<Array<string> | null>([]);
+    const [track, setTrack] = useState<Array<string>>([]);
 
     const handleClick = () => {
-        console.log(connect(starting, 'XXX'));
         setTrack(connect(starting, ending));
     }
-
 
     return(
         <section>
@@ -30,11 +29,11 @@ const AirConnection = () => {
                 <Dropdown data={airports} setValue={setEnding} value={ending} />
                 <Button onClick={handleClick}>fly!</Button>
             </SearchConnection>
+            <p>so your track is:</p>
             <TrackList>
-                {track ?
-                track.map(airport => <p>{airport}</p>)
-                : <p>Sorry, there is no connection between this airports.</p>
-                }
+                {track.map((airport, index) => {
+                    return airport === track[track.length - 1] ? <p key={index}>{airport}</p> : <div key={index}><p>{airport}</p><PlaneTakeOff width="1rem" height="1rem"/></div>
+                })}
             </TrackList>
         </section>
     )

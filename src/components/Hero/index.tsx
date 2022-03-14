@@ -4,7 +4,7 @@ import heroImage  from '../../images/heroImage.jpg';
 const Hero = styled.div`
     z-index: -99;
     width: 100%;
-    height: 13rem;
+    height: 7.5rem;
     background-image: url(${heroImage});
     background-size: cover;
     background-repeat: no-repeat;

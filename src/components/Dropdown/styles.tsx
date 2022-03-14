@@ -20,6 +20,8 @@ export const DropdownContent = styled.div<{isVisible: boolean}>`
     overflow-y: scroll;
     border: 1px solid ${ props => props.theme.colors.secondaryColor };
     border-radius: 5px;
+    background-color: #ffffff;
+    z-index: 99;
 
     ::-webkit-scrollbar {
         width: 0px;
@@ -35,6 +37,8 @@ export const SearchContainer = styled.div`
 
 export const Search = styled.input`
     height: 2.5rem;
+    min-width: 115px;
+    width: 100%;
     border: 1px solid ${ props => props.theme.colors.secondaryColor };
     border-radius: 5px 0px 0px 5px;
     padding-left: 0.75rem;

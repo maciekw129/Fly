@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         font-family: 'Fredoka', sans-serif;
+        height: 100vh;
     }
 
     section {
@@ -21,7 +22,6 @@ const GlobalStyles = createGlobalStyle`
 
     p {
         padding: 0.5rem;
-        
         text-align: center;
     }
 `;
